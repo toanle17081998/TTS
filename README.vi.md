@@ -372,6 +372,14 @@ docker compose -f docker/docker-compose.yml --profile api-cpu up     # hoặc: D
 uv run python examples/openai_speech_client.py --bench 8
 ```
 
+Trên Windows, có thể chạy bằng PowerShell (tự nhận proxy hệ thống/PAC để tải model):
+
+```powershell
+.\run_speech.ps1
+# Chỉ định proxy hoặc cổng nếu cần:
+.\run_speech.ps1 -ProxyUrl http://proxy.example.com:3128 -Port 8001
+```
+
 ```python
 from openai import OpenAI
 client = OpenAI(base_url="http://localhost:8000/v1", api_key="x")
